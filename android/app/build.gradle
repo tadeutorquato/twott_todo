@@ -46,8 +46,8 @@ android {
         applicationId "info.infoconsultor.twott_todo"
         minSdkVersion 21 //flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode System.getenv('APPCENTER_BUILD_ID').toInteger()
-        //versionCode flutterVersionCode.toInteger()
+        //versionCode System.getenv('APPCENTER_BUILD_ID').toInteger()
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
