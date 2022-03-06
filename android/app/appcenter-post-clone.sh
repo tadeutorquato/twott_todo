@@ -13,7 +13,7 @@ git clone -b beta https://github.com/flutter/flutter.git
 export PATH=`pwd`/flutter/bin:$PATH
 
 flutter channel stable
-flutter doctor
+# flutter doctor
 
 echo "Installed flutter to `pwd`/flutter"
 
@@ -21,8 +21,8 @@ echo "Installed flutter to `pwd`/flutter"
 # if you get "Execution failed for task ':app:lintVitalRelease'." error, uncomment next two lines
 # flutter build apk --debug
 # flutter build apk --profile
-flutter build apk --release
-# flutter build --flavor appCenter
+# flutter build apk --release
+flutter build apk --flavor appCenter
 
 # if you need build bundle (AAB) in addition to your APK, uncomment line below and last line of this script.
 #flutter build appbundle --release --build-number $APPCENTER_BUILD_ID
