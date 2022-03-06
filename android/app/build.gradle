@@ -26,6 +26,17 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    flavorDimensions "distribute"
+    productFlavors {
+          appCenter {
+           dimension "distribute"
+        }
+
+        googlePlay {
+           dimension "distribute"
+        }
+    }
+  
     compileSdkVersion flutter.compileSdkVersion
 
     compileOptions {
