@@ -28,7 +28,8 @@ flutter build apk --flavor appCenter
 #flutter build appbundle --release --build-number $APPCENTER_BUILD_ID
 
 # copy the APK where AppCenter will find it
-mkdir -p android/app/build/outputs/apk/; mv build/app/outputs/apk/release/app-appcenter-release.apk $_
+#mkdir -p android/app/build/outputs/apk/; mv build/app/outputs/apk/release/app-release.apk $_
+mkdir -p android/app/build/outputs/apk/; mv build/app/outputs/flutter-apk/app-appcenter-release.apk $_
 
 # copy the AAB where AppCenter will find it
 #mkdir -p android/app/build/outputs/bundle/; mv build/app/outputs/bundle/release/app-release.aab $_
