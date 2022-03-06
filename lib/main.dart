@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,19 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
+  }
+
+  void initAppCenter() async {
+    var appSecretAndroid = "0b3130ae-6a61-4fe0-bfd2-8a3d9582f16f";
+    var appSecretIOS = "0b3130ae-6a61-4fe0-bfd2-8a3d9582f16f";
+
+    await AppCenter.startAsync(appSecretAndroid: appSecretAndroid, appSecretIOS: appSecretIOS);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initAppCenter();
   }
 
   @override
