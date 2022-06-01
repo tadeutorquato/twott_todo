@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
+import 'package:tpc_bluetooth_printer/tpc_bluetooth_printer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,8 +60,29 @@ class _MyHomePageState extends State<MyHomePage> {
     //initAppCenter();
 
     AppCenter.trackEventAsync('_MyHomePageState.initState');
+    
+    await _getImpressoraBtList();
   }
 
+  _getImpressoraBtList() async {
+    setState(() => _isLoadingBt = true);
+    var result = await TpcBluetoothPrinter.listPrinters().timeout(const Duration(seconds: 5), onTimeout: () => {'success':false, 'data':'Timeout'});
+    if(result['success']){
+      for(var d in result['data']){
+        _blueDevices.add({'name':d['name'], 'address':d['address']});
+      }
+      _atualizarImpressoras();
+    } else {
+      if(kDebugMode){print(result);}
+      _failed = true;
+      _reason = 'Não foi possível encontrar impressoras bluetooth';
+    }
+    setState(() {
+      _isLoadingBt = false;
+    });
+
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
