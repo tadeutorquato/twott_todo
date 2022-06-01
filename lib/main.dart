@@ -55,13 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
   // }
 
   @override
-  void initState() async {
+  void initState() {
     super.initState();
     //initAppCenter();
 
     AppCenter.trackEventAsync('_MyHomePageState.initState');
     
-    await _getImpressoraBtList();
+    //await _getImpressoraBtList();
   }
 
   _getImpressoraBtList() async {
