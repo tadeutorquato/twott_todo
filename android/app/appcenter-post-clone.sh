@@ -14,7 +14,7 @@ export PATH=`pwd`/flutter/bin:$PATH
 
 #apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 
-flutter precache
+# flutter precache
 # flutter channel stable
 # flutter doctor
 
