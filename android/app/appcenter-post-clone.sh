@@ -25,6 +25,8 @@ echo "Installed flutter to `pwd`/flutter"
 # flutter build apk --debug
 # flutter build apk --profile
 # flutter build apk --release
+flutter clean
+flutter pub get
 flutter build apk --flavor appCenter
 
 # if you need build bundle (AAB) in addition to your APK, uncomment line below and last line of this script.
