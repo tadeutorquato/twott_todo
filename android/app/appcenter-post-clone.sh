@@ -12,7 +12,10 @@ cd ..
 git clone -b 2.10.4 https://github.com/flutter/flutter.git
 export PATH=`pwd`/flutter/bin:$PATH
 
-flutter channel stable
+apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+
+flutter precache
+# flutter channel stable
 # flutter doctor
 
 echo "Installed flutter to `pwd`/flutter"
