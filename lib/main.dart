@@ -63,23 +63,25 @@ class _MyHomePageState extends State<MyHomePage> {
     
     //await _getImpressoraBtList();
   }
-
+  
+  final List<dynamic> _blueDevices = <Map<String, dynamic>>[];  
+  
   _getImpressoraBtList() async {
-    setState(() => _isLoadingBt = true);
+    //setState(() => _isLoadingBt = true);
     var result = await TpcBluetoothPrinter.listPrinters().timeout(const Duration(seconds: 5), onTimeout: () => {'success':false, 'data':'Timeout'});
     if(result['success']){
       for(var d in result['data']){
         _blueDevices.add({'name':d['name'], 'address':d['address']});
       }
-      _atualizarImpressoras();
+      //_atualizarImpressoras();
     } else {
       if(kDebugMode){print(result);}
-      _failed = true;
-      _reason = 'Não foi possível encontrar impressoras bluetooth';
+      //_failed = true;
+      //_reason = 'Não foi possível encontrar impressoras bluetooth';
     }
-    setState(() {
-      _isLoadingBt = false;
-    });
+    //setState(() {
+      //_isLoadingBt = false;
+    //});
 
   }
   
