@@ -59,8 +59,8 @@ dependencies:
   flutter_appcenter_bundle: ^3.3.2
   tpc_bluetooth_printer:
     path: plugins/tpc_bluetooth_printer
-  zebrautility: ^0.0.40
- # zsdk: ^2.0.0+13
+  #zebrautility: ^0.0.40
+  zsdk: ^2.0.0+13
 
 dev_dependencies:
   flutter_test:
